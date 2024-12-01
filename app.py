@@ -1,29 +1,9 @@
-# Import necessary modules from Flask
 
-# Import the Flask module, which is the core of the Flask web framework.
-# It's used to create and manage web applications.
-from flask import Flask
-
-# Import the render_template function from Flask, which is used to render HTML templates.
-# Templates allow dynamic content to be displayed in web pages.
-from flask import render_template
-
-# Import the request object from Flask, which provides access to incoming HTTP request data.
-# This is useful for retrieving form data, headers, and more from the client's request.
-from flask import request
-
-# Import the redirect function from Flask, which is used to perform HTTP redirects.
-# It allows you to send the user's browser to a different URL or endpoint.
-from flask import redirect
-
-# Import the url_for function from Flask, used to generate URLs for specific functions in the application.
-# It helps create dynamic and clean URLs, ensuring consistency when routing in the app.
-from flask import url_for
+from flask import Flask, render_template, request, redirect, url_for
 
 
-# Create a Flask application instance
-# __name__ is a special Python variable that represents the name of the current module
-# 'static' and 'templates' are folders for static files (like CSS, JS, images) and HTML templates respectively
+
+
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 
@@ -572,4 +552,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5001)
